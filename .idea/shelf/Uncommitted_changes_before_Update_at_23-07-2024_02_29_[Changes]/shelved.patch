@@ -1,0 +1,124 @@
+Index: src/test/java/QAFox_SeleniumGrid_Docker_Maven/Demo2FF.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package QAFox_SeleniumGrid_Docker_Maven;\r\n\r\nimport Base.InitializeBrowser;\r\nimport org.openqa.selenium.WebDriver;\r\nimport org.testng.annotations.AfterMethod;\r\nimport org.testng.annotations.BeforeMethod;\r\nimport org.testng.annotations.Test;\r\n\r\nimport java.net.MalformedURLException;\r\n\r\npublic class Demo2FF extends InitializeBrowser {\r\n    WebDriver driver;\r\n\r\n//    @Test              //// W I T H O U T ----- E X T E N D S\r\n//    public void test1() throws Exception {\r\n//\r\n//        DesiredCapabilities dc = new DesiredCapabilities();\r\n//        dc.setBrowserName(\"chrome\");\r\n//\r\n//        WebDriver driver = new RemoteWebDriver(new URL(\"http://localhost:4444/\"), dc);\r\n//\r\n//        driver.get(\"https://the-internet.herokuapp.com/\");\r\n//        Thread.sleep(5000);\r\n//        System.out.println(\"Title is: \" + driver.getTitle());\r\n//\r\n//    }\r\n\r\n    @BeforeMethod\r\n    public void setup() throws MalformedURLException {\r\n        driver = initBrowser(\"chrome\");\r\n    }\r\n\r\n    @Test\r\n    public void test2() throws InterruptedException {\r\n        driver.get(\"https://the-internet.herokuapp.com/\");\r\n        Thread.sleep(5000);\r\n        System.out.println(\"Title is: \" + driver.getTitle() + \" is from FF node\");\r\n    }\r\n\r\n    @AfterMethod\r\n    public void tearDown() {\r\n        driver.quit();\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/QAFox_SeleniumGrid_Docker_Maven/Demo2FF.java b/src/test/java/QAFox_SeleniumGrid_Docker_Maven/Demo2FF.java
+--- a/src/test/java/QAFox_SeleniumGrid_Docker_Maven/Demo2FF.java	(revision 7859bcc58501d0622dcfe27c8f7c9e9697b2e83d)
++++ b/src/test/java/QAFox_SeleniumGrid_Docker_Maven/Demo2FF.java	(date 1721680751638)
+@@ -11,23 +11,9 @@
+ public class Demo2FF extends InitializeBrowser {
+     WebDriver driver;
+ 
+-//    @Test              //// W I T H O U T ----- E X T E N D S
+-//    public void test1() throws Exception {
+-//
+-//        DesiredCapabilities dc = new DesiredCapabilities();
+-//        dc.setBrowserName("chrome");
+-//
+-//        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/"), dc);
+-//
+-//        driver.get("https://the-internet.herokuapp.com/");
+-//        Thread.sleep(5000);
+-//        System.out.println("Title is: " + driver.getTitle());
+-//
+-//    }
+-
+     @BeforeMethod
+     public void setup() throws MalformedURLException {
+-        driver = initBrowser("chrome");
++        driver = initBrowser("firefox");
+     }
+ 
+     @Test
+Index: src/test/java/Base/InitializeBrowser.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Base;\r\n\r\nimport org.openqa.selenium.WebDriver;\r\nimport org.openqa.selenium.remote.DesiredCapabilities;\r\nimport org.openqa.selenium.remote.RemoteWebDriver;\r\n\r\nimport java.net.MalformedURLException;\r\nimport java.net.URL;\r\n\r\npublic class InitializeBrowser {\r\n\r\n    public WebDriver initBrowser(String browserName) throws MalformedURLException {\r\n\r\n        DesiredCapabilities dc = new DesiredCapabilities();\r\n        if(browserName.equals(\"chrome\")){\r\n            dc.setBrowserName(\"chrome\");\r\n        } else if(browserName.equals(\"firefox\")){\r\n            dc.setBrowserName(\"firefox\");\r\n        }\r\n\r\n        WebDriver driver = new RemoteWebDriver(new URL(\"http://localhost:4444\"), dc);\r\n\r\n        return driver;\r\n\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/Base/InitializeBrowser.java b/src/test/java/Base/InitializeBrowser.java
+--- a/src/test/java/Base/InitializeBrowser.java	(revision 7859bcc58501d0622dcfe27c8f7c9e9697b2e83d)
++++ b/src/test/java/Base/InitializeBrowser.java	(date 1721680688067)
+@@ -16,6 +16,8 @@
+             dc.setBrowserName("chrome");
+         } else if(browserName.equals("firefox")){
+             dc.setBrowserName("firefox");
++        } else if(browserName.equals("edge")){
++            dc.setBrowserName("MicrosoftEdge");
+         }
+ 
+         WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444"), dc);
+Index: testng.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<!DOCTYPE suite SYSTEM \"http://testng.org/testng-1.0.dtd\">\r\n<suite name=\"All Test Suite\">\r\n\t<test verbose=\"2\"\r\n\t      preserve-order=\"true\"\r\n\t      thread-count='5'\r\n\t      name=\"C:/Users/joxbi/IntelliJ_Projects/QAFox_Docker_SeleniumGrid_Java\">\r\n\t\t<classes>\r\n\t\t\t<class name=\"QAFox_SeleniumGrid_Docker_Maven.Demo1Chrome\">\r\n<!--\t\t\t\t<methods>-->\r\n<!--\t\t\t\t\t<include name=\"test2\"/>-->\r\n<!--\t\t\t\t</methods>-->\r\n\t\t\t</class>\r\n\t\t\t<class name=\"QAFox_SeleniumGrid_Docker_Maven.Demo2FF\">\r\n<!--\t\t\t\t<methods>-->\r\n<!--\t\t\t\t\t<include name=\"test2\"/>-->\r\n<!--\t\t\t\t</methods>-->\r\n\t\t\t</class>\r\n\t\t</classes>\r\n\t</test>\r\n</suite>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/testng.xml b/testng.xml
+--- a/testng.xml	(revision 7859bcc58501d0622dcfe27c8f7c9e9697b2e83d)
++++ b/testng.xml	(date 1721681862031)
+@@ -1,21 +1,23 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+-<suite name="All Test Suite">
+-	<test verbose="2"
+-	      preserve-order="true"
+-	      thread-count='5'
+-	      name="C:/Users/joxbi/IntelliJ_Projects/QAFox_Docker_SeleniumGrid_Java">
+-		<classes>
+-			<class name="QAFox_SeleniumGrid_Docker_Maven.Demo1Chrome">
+-<!--				<methods>-->
+-<!--					<include name="test2"/>-->
+-<!--				</methods>-->
+-			</class>
+-			<class name="QAFox_SeleniumGrid_Docker_Maven.Demo2FF">
+-<!--				<methods>-->
+-<!--					<include name="test2"/>-->
+-<!--				</methods>-->
+-			</class>
+-		</classes>
+-	</test>
++<suite name="All Test Suite" parallel="classes">
++    <test verbose="2"
++          thread-count="5"
++          preserve-order="true"
++          name="C:/Users/joxbi/IntelliJ_Projects/QAFox_Docker_SeleniumGrid_Java/src/test/java/QAFox_SeleniumGrid_Docker_Maven">
++        <classes>
++            <class name="QAFox_SeleniumGrid_Docker_Maven.Demo11Chrome">
++            </class>
++            <class name="QAFox_SeleniumGrid_Docker_Maven.Demo1Chrome">
++            </class>
++            <class name="QAFox_SeleniumGrid_Docker_Maven.Demo22FF">
++            </class>
++            <class name="QAFox_SeleniumGrid_Docker_Maven.Demo2FF">
++            </class>
++            <class name="QAFox_SeleniumGrid_Docker_Maven.Demo33Edge">
++            </class>
++            <class name="QAFox_SeleniumGrid_Docker_Maven.Demo3Edge">
++            </class>
++        </classes>
++    </test>
+ </suite>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1721679266140)
++++ b/.idea/vcs.xml	(date 1721679266140)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file

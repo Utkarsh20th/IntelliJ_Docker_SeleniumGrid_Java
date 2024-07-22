@@ -16,6 +16,8 @@ public class InitializeBrowser {
             dc.setBrowserName("chrome");
         } else if(browserName.equals("firefox")){
             dc.setBrowserName("firefox");
+        } else if(browserName.equals("edge")){
+            dc.setBrowserName("MicrosoftEdge");
         }
 
         WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444"), dc);

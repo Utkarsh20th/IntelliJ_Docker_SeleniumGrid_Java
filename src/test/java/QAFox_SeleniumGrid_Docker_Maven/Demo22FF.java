@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 
-public class Demo2FF extends InitializeBrowser {
+public class Demo22FF extends InitializeBrowser {
     WebDriver driver;
 
     @BeforeMethod

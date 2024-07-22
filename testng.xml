@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-	<test verbose="2"
-	      preserve-order="true"
-	      thread-count='5'
-	      name="C:/Users/joxbi/IntelliJ_Projects/QAFox_Docker_SeleniumGrid_Java">
-		<classes>
-			<class name="QAFox_SeleniumGrid_Docker_Maven.Demo1Chrome">
-<!--				<methods>-->
-<!--					<include name="test2"/>-->
-<!--				</methods>-->
-			</class>
-			<class name="QAFox_SeleniumGrid_Docker_Maven.Demo2FF">
-<!--				<methods>-->
-<!--					<include name="test2"/>-->
-<!--				</methods>-->
-			</class>
-		</classes>
-	</test>
+<suite name="All Test Suite" parallel="classes">
+    <test verbose="2"
+          thread-count="5"
+          preserve-order="true"
+          name="C:/Users/joxbi/IntelliJ_Projects/QAFox_Docker_SeleniumGrid_Java/src/test/java/QAFox_SeleniumGrid_Docker_Maven">
+        <classes>
+            <class name="QAFox_SeleniumGrid_Docker_Maven.Demo11Chrome">
+            </class>
+            <class name="QAFox_SeleniumGrid_Docker_Maven.Demo1Chrome">
+            </class>
+            <class name="QAFox_SeleniumGrid_Docker_Maven.Demo22FF">
+            </class>
+            <class name="QAFox_SeleniumGrid_Docker_Maven.Demo2FF">
+            </class>
+            <class name="QAFox_SeleniumGrid_Docker_Maven.Demo33Edge">
+            </class>
+            <class name="QAFox_SeleniumGrid_Docker_Maven.Demo3Edge">
+            </class>
+        </classes>
+    </test>
 </suite>
