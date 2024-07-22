@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a3a670e-39b9-4345-b3f4-15e01d80493a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Base/InitializeBrowser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Base/InitializeBrowser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/QAFox_SeleniumGrid_Docker_Maven/Demo2FF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/QAFox_SeleniumGrid_Docker_Maven/Demo2FF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
-    </list>
+    <list default="true" id="4a3a670e-39b9-4345-b3f4-15e01d80493a" name="Changes" comment="Commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,6 +49,7 @@
     "TestNG.C:/Users/joxbi/IntelliJ_Projects/QAFox_Docker_SeleniumGrid_Java/testng.xml.executor": "Run",
     "TestNG.Demo1.executor": "Run",
     "TestNG.NodeChrome.executor": "Run",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/joxbi/IntelliJ_Projects/QAFox_Docker_SeleniumGrid_Java/src/test/java/QAFox_SeleniumGrid_Docker_Maven",
     "project.structure.last.edited": "Libraries",
@@ -129,6 +125,19 @@
       <option name="presentableId" value="Default" />
       <updated>1721674364171</updated>
     </task>
+    <task id="LOCAL-00001" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1721682376370</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1721682376370</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
   </component>
 </project>
